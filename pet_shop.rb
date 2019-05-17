@@ -29,9 +29,19 @@ end
 def pets_by_breed(pet_shop, breed)
   breed_total = []
   for pet in pet_shop[:pets]
-    if (pet[:breed] == breed)
+    if ( pet[:breed] == breed )
       breed_total.push(pet)
     end
   end
   return breed_total
+end
+
+def find_pet_by_name(pet_shop, name)
+  for pet in pet_shop[:pets]
+    if pet[:name] == name
+      return pet
+    else
+      pet = 0
+    end
+  end
 end
