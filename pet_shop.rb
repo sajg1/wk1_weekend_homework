@@ -24,21 +24,14 @@ def stock_count(pet_count)
   return pet_inventory
 end
 
-# def pets_by_breed(pets, breed)
-#   pets = [:pets]
-#   pet_breed = pets[]
-#   for pet in pets
-#     if pet_breed == breed
-#     end
-#   end
-#   return pet_breed.count
-# end
-
-# def pets_by_breed(pet, breed)
-#   pet_breed = [:pets][]
-#   total_of_breed = 0
-#   for breed in pets
-#     if breed == [:pets][:breed]
-#     total_of_breed +=
-#   end
-# end
+# in the for loop ive labeled the hash inside the pets array as 'pet' so I can now access
+# elements inside the hash
+def pets_by_breed(pet_shop, breed)
+  breed_total = []
+  for pet in pet_shop[:pets]
+    if (pet[:breed] == breed)
+      breed_total.push(pet)
+    end
+  end
+  return breed_total
+end
