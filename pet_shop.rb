@@ -69,7 +69,9 @@ def customer_pet_count(customers)
   return pet_count
 end
 
-
+def add_pet_to_customer(customer, new_pet)
+  customer[:pets].push(new_pet)
+end
 
 # test_customer_pet_count = function with one parameter,customers. It should show the .count of the array of pets. If a pet is added it would be a hash in index [0] and therefore pets.count would return 1.
 
