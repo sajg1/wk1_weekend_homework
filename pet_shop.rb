@@ -73,6 +73,13 @@ def add_pet_to_customer(customer, new_pet)
   customer[:pets].push(new_pet)
 end
 
-# test_customer_pet_count = function with one parameter,customers. It should show the .count of the array of pets. If a pet is added it would be a hash in index [0] and therefore pets.count would return 1.
+def customer_can_afford_pet(customer, new_pet)
+  if ( customer[:cash] >= new_pet[:price] )
+    return true
+  else
+    return false
+  end
+end
 
-# test_add_pet_to_customer = function with two parameters, customer and new_pet. This will add the new_pet variable from the setup.The test is passed by the customer_pet_count funtion returning the integer 1 for pets.count
+
+# customer_can_afford_pet function with two parameters, customer and new_pet.
