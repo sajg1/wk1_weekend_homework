@@ -64,10 +64,13 @@ def remove_customer_cash(customer, withdrawal)
   customer[:cash] -= withdrawal
 end
 
-# test_customer_cash = create a function, customer_cash with one parameter, customer to show the balance of the given customers
+def customer_pet_count(customers)
+  pet_count = customers[:pets].count
+  return pet_count
+end
 
-# test_remove_customer_cash = function with two parameters, customer and cash that should remove a given amount(cash).
 
-# test_customer_pet_count = function with one parameter,customer. It should show the .count of the array of pets. If a pet is added it would be a hash in index [0] and therefore pets.count would return 1.
+
+# test_customer_pet_count = function with one parameter,customers. It should show the .count of the array of pets. If a pet is added it would be a hash in index [0] and therefore pets.count would return 1.
 
 # test_add_pet_to_customer = function with two parameters, customer and new_pet. This will add the new_pet variable from the setup.The test is passed by the customer_pet_count funtion returning the integer 1 for pets.count
