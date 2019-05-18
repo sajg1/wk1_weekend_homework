@@ -56,8 +56,12 @@ def add_pet_to_stock(pet_shop, new_pet)
 end
 
 def customer_cash(customers)
-  customer_cash = customers[:cash]
-  return customer_cash
+  customer_cash_display = customers[:cash]
+  return customer_cash_display
+end
+
+def remove_customer_cash(customer, withdrawal)
+  customer[:cash] -= withdrawal
 end
 
 # test_customer_cash = create a function, customer_cash with one parameter, customer to show the balance of the given customers
