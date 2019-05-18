@@ -51,7 +51,14 @@ def remove_pet_by_name(pet_shop, name)
     pet_shop[:pets].delete(pet)
 end
 
-# test_add_pet_to_stock = create function add_pet that will show in the stock_count function that was created earlier, which should increase to 7
+def add_pet_to_stock(pet_shop, new_pet)
+  pet_shop[:pets].push(new_pet)
+end
+
+def customer_cash(customers)
+  customer_cash = customers[:cash]
+  return customer_cash
+end
 
 # test_customer_cash = create a function, customer_cash with one parameter, customer to show the balance of the given customers
 
