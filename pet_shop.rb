@@ -6,17 +6,17 @@ def total_cash(cash)
   return cash[:admin][:total_cash]
 end
 
-def add_or_remove_cash(cash, deposit)
-  cash[:admin][:total_cash] += deposit
-  return cash
+def add_or_remove_cash(pet_shop, deposit)
+  pet_shop[:admin][:total_cash] += deposit
+  return pet_shop
 end
 
-def pets_sold(total_sold)
-  return total_sold[:admin][:pets_sold]
+def pets_sold(pet_shop)
+  return pet_shop[:admin][:pets_sold]
 end
 
-def increase_pets_sold(total_sold, sold)
-  total_sold[:admin][:pets_sold] += sold
+def increase_pets_sold(pet_shop, sold)
+  pet_shop[:admin][:pets_sold] += sold
 end
 
 def stock_count(pet_count)
@@ -24,8 +24,9 @@ def stock_count(pet_count)
   return pet_inventory
 end
 
-# in the for loop ive labeled the hash inside the pets array as 'pet' so I can now access
-# elements inside the hash
+# in the for loop, the individual hashes inside the pets
+# array are labelled 'pet' so I can now access
+# the elements inside the hash
 def pets_by_breed(pet_shop, breed)
   breed_total = []
   for pet in pet_shop[:pets]
@@ -36,7 +37,7 @@ def pets_by_breed(pet_shop, breed)
   return breed_total
 end
 
-# not sure about nil solution
+
 def find_pet_by_name(pet_shop, name)
   for pet in pet_shop[:pets]
     if pet[:name] == name
@@ -47,7 +48,7 @@ def find_pet_by_name(pet_shop, name)
 end
 
 def remove_pet_by_name(pet_shop, name)
-  pet = find_pet_by_name(pet_shop, name)
+  pet = find_pet_by_name(pet_shop, name) # do you need this line of code?
     pet_shop[:pets].delete(pet)
 end
 
@@ -81,5 +82,21 @@ def customer_can_afford_pet(customer, new_pet)
   end
 end
 
+# got a bit lost here on the integration test
 
-# customer_can_afford_pet function with two parameters, customer and new_pet.
+def sell_pet_to_customer(pet_shop, pet, customer)
+
+  new_pet = pet
+  sold = customer_pet_count(customer)
+
+  if customer_can_afford_pet(customer, new_pet) == true
+    return add_pet_to_customer(customer, new_pet)
+    increase_pets_sold(pet_shop, sold)
+    remove_pet_by_name(pet_shop, name)
+
+  end
+
+end
+
+
+#
